@@ -32,6 +32,9 @@ dependencies {
     implementation("com.codeborne:selenide:7.9.1")
     // https://mvnrepository.com/artifact/org.aspectj/aspectjweaver
     runtimeOnly("org.aspectj:aspectjweaver:1.9.23")
+    implementation("org.aeonbits.owner:owner:1.0.12")
+    // https://mvnrepository.com/artifact/com.microsoft.playwright/playwright
+    implementation("com.microsoft.playwright:playwright:1.52.0")
 }
 
 test {
