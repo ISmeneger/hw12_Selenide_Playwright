@@ -41,5 +41,4 @@ public class WebFormPage {
     public void clearPasswordValue() {
         $(By.name("my-password")).clear();
     }
-
 }
