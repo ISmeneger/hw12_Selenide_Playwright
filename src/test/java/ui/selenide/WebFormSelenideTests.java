@@ -384,7 +384,7 @@ class WebFormSelenideTests {
                     .perform();
 
         }
-        assertThat(rangeElement.getAttribute("value")).isEqualTo(String.valueOf(10));
+        assertThat(rangeElement.getAttribute(VALUE_NAME)).isEqualTo(String.valueOf(10));
     }
 
     @Test
