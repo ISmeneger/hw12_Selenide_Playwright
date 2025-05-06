@@ -230,10 +230,8 @@ class WebFormPlaywrightTests {
         Locator readonlyInputField = page.locator("css=[name='my-readonly']");
 
         assertTrue(readonlyInputField.isEnabled());
+        assertFalse(readonlyInputField.isEditable());
         assertEquals("Readonly input", readonlyInputField.inputValue());
-
-//        readonlyInputField.fill("test string");
-//        assertNotEquals("test string", readonlyInputField.inputValue());
 
         System.out.println(readonlyInputField.inputValue());
     }
@@ -242,7 +240,7 @@ class WebFormPlaywrightTests {
     @Order(14)
     @ValueSource(strings = {"One", "Two", "Three"})
     public void dropdownSelectByVisibleTextTest(String option) {
-        Locator dropdownSelectMenu = page.locator("css=[name='my-select']");
+        Locator dropdownSelectMenu = page.locator("css=.form-select");
 
         assertEquals(DROPDOWN_SELECT_TEXT, dropdownSelectMenu.inputValue());
 
@@ -375,7 +373,7 @@ class WebFormPlaywrightTests {
         System.out.println("y = " + y);
 
         for (int i = 5; i <= 10; i++) {
-            page.mouse().move((float)(x + width / 10 * i), (float)y);
+            page.mouse().move((x + (double) width / 10 * i), y);
             page.mouse().down();
             page.mouse().up();
         }
