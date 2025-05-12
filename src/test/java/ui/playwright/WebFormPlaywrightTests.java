@@ -414,7 +414,7 @@ class WebFormPlaywrightTests {
 
     @Test
     @Order(27)
-    @DisplayName("Check submit button")
+    @DisplayName("Check submit button and form submitted")
     void submitButtonTest() {
         HomePage homePage = new HomePage(page);
         homePage.open();
